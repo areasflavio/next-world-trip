@@ -2,6 +2,13 @@ import { ChakraProvider } from '@chakra-ui/react';
 
 import { theme } from '../styles/theme';
 
+import 'swiper/css';
+import 'swiper/css/bundle';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import '../styles/continents-slider.css';
+
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>

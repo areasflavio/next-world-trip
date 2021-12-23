@@ -45,7 +45,7 @@ export function ContinentInfo() {
               flex={[1]}
             >
               cidades +100
-              <Tooltip label="As cidades +100 são as cidades que  estão entre as 100 cidades mais visitadas do mundo.">
+              <Tooltip label="As cidades +100 são as cidades que  estão entre as 100 mais visitadas do mundo.">
                 <Image src={`/assets/icons/info.svg`} alt="Info" ml={['1']} />
               </Tooltip>
             </Text>

@@ -25,7 +25,7 @@ export default function Home() {
       <Heading
         as="h2"
         fontWeight="500"
-        fontSize={['4xl']}
+        fontSize={['xl', '2xl', '4xl']}
         lineHeight={['tall']}
         textAlign="center"
       >

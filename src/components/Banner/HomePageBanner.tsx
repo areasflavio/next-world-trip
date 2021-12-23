@@ -5,22 +5,22 @@ export function HomePageBanner() {
     <Flex
       as="section"
       bgImage="url('/assets/banner-background.png')"
-      bgPosition="100% 30%"
+      bgPosition={['100% 20%', '100% 20%', '100% 30%']}
       bgRepeat="no-repeat"
       bgSize="cover"
-      justify={['space-between']}
+      justify={['center', 'space-between']}
       align="center"
       w="100%"
-      mx="auto"
-      px={['36']}
-      h={['335px']}
+      mx={['0', 'auto']}
+      px={['4', '8', '8', '18', '36']}
+      h={['163px', '250px', '300px', '335px']}
     >
       <Stack>
         <Heading
           as="h2"
-          fontSize="4xl"
+          fontSize={['xl', '4xl']}
           fontWeight="500"
-          lineHeight="3.375rem"
+          lineHeight={['1.875rem', '3.375rem']}
           color="light.600"
         >
           5 Continentes,
@@ -31,9 +31,9 @@ export function HomePageBanner() {
         <Text
           as="p"
           color="light.400"
-          fontSize={['xl']}
+          fontSize={['sm', 'xl']}
           mt={['5']}
-          maxW={['550px']}
+          maxW={['100%', '100%', '100%', '550px']}
         >
           Chegou a hora de tirar do papel a viagem que você sempre sonhou.
         </Text>
@@ -42,7 +42,13 @@ export function HomePageBanner() {
       <Image
         src="/assets/airplane.svg"
         alt="airplane"
-        transform="translateY(48px)"
+        transform={[
+          'translateY(0px)',
+          'translateY(0px)',
+          'translateY(32px)',
+          'translateY(48px)',
+        ]}
+        display={['none', 'none', 'flex', 'flex']}
       />
     </Flex>
   );

@@ -52,3 +52,21 @@
 .swiper-pagination-bullet-active {
   background: #ffba08;
 }
+
+@media (max-width: 768px) {
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 24px;
+  }
+  .swiper-button-next {
+    right: 12px;
+  }
+  .swiper-button-prev {
+    left: 12px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+  }
+}

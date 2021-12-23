@@ -7,6 +7,7 @@ export function City() {
       bg="light.900"
       maxW={['64']}
       borderRadius={['4']}
+      mx={['auto']}
     >
       <Image
         src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"

@@ -27,10 +27,11 @@ export default function Continent() {
 
       <Flex
         direction="column"
-        gap={['20']}
+        gap={['8', '20']}
         maxW={['1160px']}
         mx="auto"
-        my={['20']}
+        my={['6', '20']}
+        px={['4']}
       >
         <ContinentInfo />
 

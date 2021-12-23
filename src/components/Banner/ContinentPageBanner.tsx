@@ -8,15 +8,20 @@ export function ContinentPageBanner() {
       bgPosition="100% 30%"
       bgRepeat="no-repeat"
       bgSize="cover"
-      justify={['space-between']}
-      align="flex-end"
+      justify={['center', 'center', 'space-between']}
+      align={['center', 'center', 'flex-end']}
       w="100%"
       mx="auto"
       px={['36']}
       py={['16']}
-      h={['500px']}
+      h={['150px', '350px', '500px']}
     >
-      <Heading as="h2" fontSize="5xl" fontWeight="600" color="light.600">
+      <Heading
+        as="h2"
+        fontSize={['2xl', '4xl', '5xl']}
+        fontWeight="600"
+        color="light.600"
+      >
         Europa
       </Heading>
     </Flex>

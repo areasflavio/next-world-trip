@@ -1,7 +1,7 @@
 import { Heading } from '@chakra-ui/react';
 import Head from 'next/head';
 
-import { Banner } from '../components/Banner';
+import { HomePageBanner } from '../components/Banner/HomePageBanner';
 import { Divider } from '../components/Divider';
 import { Header } from '../components/Header';
 import { ContinentsSlider } from '../components/ContinentsSlider';
@@ -16,7 +16,7 @@ export default function Home() {
 
       <Header />
 
-      <Banner />
+      <HomePageBanner />
 
       <TravelTypes />
 

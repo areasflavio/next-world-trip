@@ -1,6 +1,6 @@
 import { Flex, Stack, Heading, Text, Image } from '@chakra-ui/react';
 
-export function Banner() {
+export function HomePageBanner() {
   return (
     <Flex
       as="section"

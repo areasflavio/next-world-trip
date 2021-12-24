@@ -1,6 +1,17 @@
 import { Flex, Image, Text } from '@chakra-ui/react';
 
-export function City() {
+type City = {
+  city: string;
+  country: string;
+  thumbnail_url: string;
+  flag_url: string;
+};
+
+interface CityProps {
+  city: City;
+}
+
+export function City({ city }: CityProps) {
   return (
     <Flex
       flexDir={['column']}
@@ -10,9 +21,12 @@ export function City() {
       mx={['auto']}
     >
       <Image
-        src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-        alt="Londres"
+        src={city.thumbnail_url}
+        alt={city.city}
         borderTopRadius={['4']}
+        w={['64']}
+        height={['173px']}
+        objectFit={['cover']}
       />
 
       <Flex
@@ -23,22 +37,26 @@ export function City() {
         borderBottom="1px"
         borderColor="brand.500"
         borderBottomRadius={['4']}
+        mt={['auto']}
       >
         <Flex flexDir={['column']} gap={['3']}>
           <Text as="strong" fontSize={['xl']} fontWeight={['600']}>
-            Londres
+            {city.city}
           </Text>
           <Text as="small" color="dark.400" fontSize={['md']}>
-            Reino Unido
+            {city.country}
           </Text>
         </Flex>
 
         <Image
-          src="https://countryflagsapi.com/png/gb"
-          alt="GB"
+          src={city.flag_url}
+          alt={city.country}
           width={['30px']}
           height={['30px']}
           borderRadius={['100%']}
+          border="1px"
+          borderColor="brand.500"
+          objectFit={['cover']}
         />
       </Flex>
     </Flex>

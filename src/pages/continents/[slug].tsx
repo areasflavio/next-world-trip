@@ -1,29 +1,49 @@
-import { GetServerSideProps } from 'next';
+import { Flex } from '@chakra-ui/react';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import Prismic from '@prismicio/client';
 import Head from 'next/head';
+
+import { getPrismicClient } from '../../services/prismic';
 
 import { Header } from '../../components/Header';
 import { ContinentPageBanner } from '../../components/Banner/ContinentPageBanner';
-import {
-  SimpleGrid,
-  Flex,
-  Text,
-  Stack,
-  Image,
-  Tooltip,
-} from '@chakra-ui/react';
 import { ContinentInfo } from '../../components/ContinentInfo';
-import { Cities } from '../../components/Citites';
+import { Cities } from '../../components/Cities';
 
-export default function Continent() {
+type Continent = {
+  title: string;
+  description: string;
+  image_url: string;
+  info: {
+    countries: number;
+    languages: number;
+    cities: number;
+  };
+  cities100: {
+    city: string;
+    country: string;
+    thumbnail_url: string;
+    flag_url: string;
+  }[];
+};
+
+interface ContinentProps {
+  continent: Continent;
+}
+
+export default function Continent({ continent }: ContinentProps) {
   return (
     <>
       <Head>
-        <title>Welcome | worldtrip</title>
+        <title>{continent.title} | worldtrip</title>
       </Head>
 
       <Header hasBackButton />
 
-      <ContinentPageBanner />
+      <ContinentPageBanner
+        imgUrl={continent.image_url}
+        imgTitle={continent.title}
+      />
 
       <Flex
         direction="column"
@@ -33,20 +53,57 @@ export default function Continent() {
         my={['6', '20']}
         px={['4']}
       >
-        <ContinentInfo />
+        <ContinentInfo text={continent.description} info={continent.info} />
 
-        <Cities />
+        <Cities cities={continent.cities100} />
       </Flex>
     </>
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-  const { slug } = params;
+export const getStaticPaths: GetStaticPaths = async () => {
+  const prismic = getPrismicClient();
 
-  console.log(slug);
+  const response = await prismic.query([
+    Prismic.predicates.at('document.type', 'continent'),
+  ]);
+
+  const paths = response.results.map((continent) => ({
+    params: { slug: continent.uid },
+  }));
 
   return {
-    props: {},
+    paths,
+    fallback: true,
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const { slug } = params;
+
+  const prismic = getPrismicClient();
+
+  const response = await prismic.getByUID('continent', String(slug), {});
+
+  const continent = {
+    title: response.data.title,
+    description: response.data.description,
+    image_url: response.data.banner_image.url,
+    info: {
+      countries: response.data.countries,
+      languages: response.data.languages,
+      cities: response.data.cities,
+    },
+    cities100: response.data['cities-100'].map((cityObj) => ({
+      city: cityObj.city,
+      country: cityObj.country,
+      thumbnail_url: cityObj.thumbnail.url,
+      flag_url: cityObj.flag.url,
+    })),
+  };
+
+  return {
+    props: { continent },
+    revalidate: 60 * 60 * 24 * 30, // 30 days
   };
 };

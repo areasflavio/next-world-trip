@@ -1,6 +1,16 @@
 import { Flex, Image, Stack, Text, Tooltip } from '@chakra-ui/react';
+import { RichText } from 'prismic-dom';
 
-export function ContinentInfo() {
+interface ContinentInfoProps {
+  text: string;
+  info: {
+    countries: number;
+    languages: number;
+    cities: number;
+  };
+}
+
+export function ContinentInfo({ info, text }: ContinentInfoProps) {
   return (
     <>
       <Flex
@@ -8,17 +18,12 @@ export function ContinentInfo() {
         gap={['4', '16']}
         flexDir={['column', 'column', 'row']}
       >
-        <Text
-          as="p"
+        <Flex
           maxW={['100%', '100%', '450px', '600px']}
           fontSize={['sm', 'lg', 'xl', '2xl']}
           textAlign={['justify']}
-        >
-          A Europa é, por convenção, um dos seis continentes do mundo.
-          Compreendendo a península ocidental da Eurásia, a Europa geralmente
-          divide-se da Ásia a leste pela divisória de águas dos montes Urais, o
-          rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste
-        </Text>
+          dangerouslySetInnerHTML={{ __html: RichText.asHtml(text) }}
+        ></Flex>
 
         <Flex
           alignItems={['center']}
@@ -35,7 +40,7 @@ export function ContinentInfo() {
               fontSize={['2xl', '3xl', '3xl', '5xl']}
               color="brand.900"
             >
-              50
+              {info.countries}
             </Text>
             <Text as="small" fontSize={['lg', 'lg', '2xl']}>
               países
@@ -51,7 +56,7 @@ export function ContinentInfo() {
               fontSize={['2xl', '3xl', '3xl', '5xl']}
               color="brand.900"
             >
-              60
+              {info.languages}
             </Text>
             <Text as="small" fontSize={['lg', 'lg', '2xl']}>
               línguas
@@ -67,7 +72,7 @@ export function ContinentInfo() {
               fontSize={['2xl', '3xl', '3xl', '5xl']}
               color="brand.900"
             >
-              27
+              {info.cities}
             </Text>
             <Text
               as="small"

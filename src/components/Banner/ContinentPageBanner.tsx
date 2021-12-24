@@ -1,10 +1,18 @@
-import { Flex, Stack, Heading, Text, Image } from '@chakra-ui/react';
+import { Flex, Heading } from '@chakra-ui/react';
 
-export function ContinentPageBanner() {
+interface ContinentPageBannerProps {
+  imgUrl: string;
+  imgTitle: string;
+}
+
+export function ContinentPageBanner({
+  imgUrl,
+  imgTitle,
+}: ContinentPageBannerProps) {
   return (
     <Flex
       as="section"
-      bgImage="url('https://images.unsplash.com/photo-1473896100090-53523650d4c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80')"
+      bgImage={`url(${imgUrl})`}
       bgPosition="100% 30%"
       bgRepeat="no-repeat"
       bgSize="cover"
@@ -22,7 +30,7 @@ export function ContinentPageBanner() {
         fontWeight="600"
         color="light.600"
       >
-        Europa
+        {imgTitle}
       </Heading>
     </Flex>
   );

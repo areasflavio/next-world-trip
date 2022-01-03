@@ -4,6 +4,7 @@ import SwiperCore, {
   Pagination,
   Mousewheel,
   Keyboard,
+  Autoplay,
 } from 'swiper';
 import {
   Center,
@@ -16,7 +17,7 @@ import {
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
-SwiperCore.use([Navigation, Pagination, Mousewheel, Keyboard]);
+SwiperCore.use([Navigation, Pagination, Mousewheel, Keyboard, Autoplay]);
 
 type Continent = {
   slug: string;
@@ -34,7 +35,7 @@ export function ContinentsSlider({ continents }: ContinentsSliderProps) {
     <Center
       h={['250px', '350px', '450px']}
       mt={['12']}
-      mb={['10']}
+      mb={['12']}
       mx={['0', '0', '12', '24']}
     >
       <Swiper
@@ -45,6 +46,7 @@ export function ContinentsSlider({ continents }: ContinentsSliderProps) {
         }}
         mousewheel={true}
         keyboard={true}
+        autoplay
       >
         {continents.map((continent) => (
           <SwiperSlide key={continent.slug}>

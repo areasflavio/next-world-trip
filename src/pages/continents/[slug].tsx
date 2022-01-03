@@ -1,7 +1,8 @@
 import { Flex } from '@chakra-ui/react';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import Prismic from '@prismicio/client';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
+import Prismic from '@prismicio/client';
 
 import { getPrismicClient } from '../../services/prismic';
 
@@ -32,6 +33,10 @@ interface ContinentProps {
 }
 
 export default function Continent({ continent }: ContinentProps) {
+  const router = useRouter();
+
+  if (router.isFallback) return null;
+
   return (
     <>
       <Head>

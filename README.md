@@ -36,12 +36,23 @@
 
 # :computer: Features
 
+[(Back to top)](#Next-world-trip)
+
 I built this app when studying Next.JS feature SSG - Static Site Generation - while
 fetch data from an external API.
 
+Some key features are:
+
+- Pages are loadesd using SSG.
+- Responsive layout.
+- Some history about the continent.
+- Curiosities of the continent.
+- List of the main cities on the continent.
+
 The application is built using ReactJS with Next.JS framework and SSG feature. The
 data is provided by Prismic CMS, fetched by API. The user interface is built with the
-amazing ChakraUI declarative component library. The entire codebase is written using Typescript.
+amazing ChakraUI declarative component library and is fully responsive. 
+The entire codebase is written using Typescript.
 
 <p align="center">
   You can also check out the <a href="https://next-world-trip.vercel.app">full version</a>
@@ -50,8 +61,6 @@ amazing ChakraUI declarative component library. The entire codebase is written u
 <p align="center">
     <img alt="Vercel" src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
 </p>
-
-[(Back to top)](#Next-world-trip)
 
 <br/>
 

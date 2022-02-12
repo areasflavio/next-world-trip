@@ -43,7 +43,7 @@ fetch data from an external API.
 
 Some key features are:
 
-- Pages are loadesd using SSG.
+- Pages are loaded using SSG.
 - Responsive layout.
 - Some history about the continent.
 - Curiosities of the continent.

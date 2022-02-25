@@ -9,12 +9,6 @@
 </h2>
 
 <p align="center">
-  <a href="#computer-features">Features</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="#keyboard-technologies">Technologies</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="#computer_mouse-installation">Installation</a>
-</p>
-
-<p align="center">
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/areasflavio/next-world-trip.svg">
   
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/areasflavio/next-world-trip.svg">
@@ -24,7 +18,11 @@
   </a>
 </p>
 
-<br/>
+<p align="center">
+  <a href="#star-features">Features</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#keyboard-technologies">Technologies</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#computer_mouse-installation">Installation</a>
+</p>
 
 <img alt="demo" src=".github/demo.gif" width="100%">
 <img alt="demo1" src=".github/demo1.png" width="100%">
@@ -34,25 +32,24 @@
 
 <br/>
 
-# :computer: Features
+# :star: Features
 
-[(Back to top)](#Next-world-trip)
-
-I built this app when studying Next.JS feature SSG - Static Site Generation - while
-fetch data from an external API.
+This is a travel guide app. You can get information about travel and about the
+continents or whichever one you choose to go to.
 
 Some key features are:
 
-- Pages are loaded using SSG.
-- Responsive layout.
-- Some history about the continent.
-- Curiosities of the continent.
-- List of the main cities on the continent.
+- Functional application with Next.JS and SSG.
+- UI built with ChakraUI.
+- Fully responsive.
+- Data is fetched from Prismic CMS.
 
 The application is built using ReactJS with Next.JS framework and SSG feature. The
-data is provided by Prismic CMS, fetched by API. The user interface is built with the
-amazing ChakraUI declarative component library and is fully responsive. 
-The entire codebase is written using Typescript.
+data is provided by Prismic CMS, fetched by API. The user interface is built with
+the amazing ChakraUI declarative component library. The entire codebase is written
+using Typescript.
+
+> Project developed as a challenge for Chapter IV of Rocketseat's Ignite bootcamp.
 
 <p align="center">
   You can also check out the <a href="https://next-world-trip.vercel.app">full version</a>
@@ -61,6 +58,8 @@ The entire codebase is written using Typescript.
 <p align="center">
     <img alt="Vercel" src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
 </p>
+
+[(Back to top)](#Next-world-trip)
 
 <br/>
 
@@ -75,6 +74,7 @@ This is what i used and learned with this project:
 - [x] Chackra UI
 - [x] Prismic CMS
 - [x] Swiper
+- [x] Eslint
 - [x] Typescript
 
 <br/>
@@ -83,8 +83,8 @@ This is what i used and learned with this project:
 
 [(Back to top)](#Next-world-trip)
 
-To use this project, first you need NodeJS and Yarn installed in your device,
-then you can follow the commands below:
+To use this project, first you need NodeJS running in your device, then you can
+follow the commands below:
 
 ```bash
 # Clone this repository
